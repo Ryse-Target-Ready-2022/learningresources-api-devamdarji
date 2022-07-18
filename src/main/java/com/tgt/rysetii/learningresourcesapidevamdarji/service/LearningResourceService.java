@@ -2,12 +2,14 @@ package com.tgt.rysetii.learningresourcesapidevamdarji.service;
 
 import com.tgt.rysetii.learningresourcesapidevamdarji.entity.LearningResource;
 import com.tgt.rysetii.learningresourcesapidevamdarji.entity.LearningResourceStatus;
+import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+@Service
 public class LearningResourceService {
 
     private ArrayList<LearningResource> loadLearningResourceFromCSV(File csv){
