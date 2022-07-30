@@ -1,15 +1,31 @@
 package com.tgt.rysetii.learningresourcesapidevamdarji.entity;
 
-import java.time.LocalDate;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-public class LearningResource {
+import java.io.Serializable;
+import java.time.LocalDate;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "learningresources")
+public class LearningResource implements Serializable {
+    @Id
+    @Column(name = "learning_resource_id")
     private Integer learningResourceID;
+    @Column(name = "learning_resource_name")
     private String resourceName;
+    @Column(name = "cost_price")
     private Double costPrice;
+    @Column(name = "selling_price")
     private Double sellingPrice;
+    @Column(name = "learning_resource_status")
+    @Enumerated(EnumType.STRING)
     private LearningResourceStatus learningResourceStatus;
+    @Column(name = "created_date")
     private LocalDate createdDate;
+    @Column(name = "published_date")
     private LocalDate publishedDate;
+    @Column(name = "retired_date")
     private LocalDate retiredDate;
 
     public LearningResource(Integer learningResourceID, String resourceName, Double costPrice, Double sellingPrice, LearningResourceStatus learningResourceStatus, LocalDate createdDate, LocalDate publishedDate, LocalDate retiredDate) {
