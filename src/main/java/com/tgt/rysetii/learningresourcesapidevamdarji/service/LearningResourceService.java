@@ -29,7 +29,7 @@ public class LearningResourceService {
         return learningResourceRepository.findAll();
     }
 
-    private List<Double> getProfitMargin(){
+    List<Double> getProfitMargin(){
         List<LearningResource> learningResources = getLearningResources();
         List<Double> profitMargins = new ArrayList<>();
         for(LearningResource learningResource:learningResources){
@@ -39,7 +39,7 @@ public class LearningResourceService {
         return profitMargins;
     }
 
-    private List<LearningResource> sortLearningResourcesByProfitMargins(){
+    List<LearningResource> sortLearningResourcesByProfitMargins(){
         List<LearningResource> learningResources = getLearningResources();
 
         learningResources.sort((ele1,ele2) -> {
